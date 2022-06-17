@@ -1,7 +1,10 @@
 #pragma once
+#include <iostream>
+#include <cstring>
 #include <QWidget>
 #include <QPushbutton>
 #include <QLabel>
+#include <QLineEdit>
 
 class Widget : public QWidget
 {
@@ -12,9 +15,9 @@ public:
 
 	Widget(QWidget* parent = 0);
 	//~Widget();
-	QLabel* lab;
-	QPushButton* but;
-
+	QLineEdit *le1, *le2;//两个输入框
+	QLabel *lab, *ret;//一个表示加号，一个输出结果
+	QPushButton* but;//计算按钮
 public slots://公共槽
-	void setLabText();
+	void func();
 };

@@ -67,7 +67,7 @@
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <QtMoc>
@@ -98,6 +98,7 @@
     <QtRcc Include="MainWindow.qrc" />
     <ClCompile Include="main.cpp" />
     <None Include="QtWidgetsApplication.ico" />
+    <QtRcc Include="Resource.qrc" />
     <ResourceCompile Include="QtWidgetsApplication.rc" />
     <ClInclude Include="stdafx.h" />
     <ClCompile Include="stdafx.cpp">
