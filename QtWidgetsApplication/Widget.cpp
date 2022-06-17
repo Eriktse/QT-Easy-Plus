@@ -5,6 +5,7 @@ Widget::Widget(QWidget *parent) : QWidget(parent)
 	//设置软件标题
 	//中文转换成QString需要用fromLocal8Bit方法
 	this->setWindowTitle(QString::fromLocal8Bit("简单加法器"));
+
 	//设置软件图标
 	//添加qrc资源文件，新增前缀，新增文件后用QIcon（path）生成QIcon对象
 	this->setWindowIcon(QIcon(":/img/src/logo.png"));
@@ -13,8 +14,8 @@ Widget::Widget(QWidget *parent) : QWidget(parent)
 	lab = new QLabel(this);
 	ret = new QLabel(this);
 	but = new QPushButton(this);
-	le1 = new QLineEdit("a", this);
-	le2 = new QLineEdit("b", this);
+	le1 = new QLineEdit("1", this);
+	le2 = new QLineEdit("1", this);
 
 	//设置初始属性
 
@@ -30,8 +31,19 @@ Widget::Widget(QWidget *parent) : QWidget(parent)
 	//按钮
 	but->setText(QString::fromLocal8Bit("计算"));
 	but->setGeometry(200, 10, 100, 50);
+
+
 	//绑定事件
 	connect(but, &QPushButton::released, this, &Widget::func);
+}
+
+Widget::~Widget()
+{
+	delete le1;
+	delete le2;
+	delete lab;
+	delete ret;
+	delete but;
 }
 
 void Widget::func()
