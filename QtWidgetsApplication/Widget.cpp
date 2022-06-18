@@ -50,10 +50,11 @@ void Widget::func()
 {
 	//将QString转换成char*
 	//使用toLatin1().data()方法转换
-	long long a = le1->text().toInt();
-	long long b = le2->text().toInt();
-	std::cout << a << '+' << b << '\n';
+	long long a = le1->text().toLongLong();
+	long long b = le2->text().toLongLong();
+	
 	QString s = QString::number(a + b);
 	s = " = " + s;
+	std::cout << a << " + " << b << s.toLatin1().data() << '\n';
 	ret->setText(s);
 }
