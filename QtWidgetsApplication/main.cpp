@@ -1,4 +1,3 @@
-
 #include "Widget.h"
 #include <QtWidgets/QApplication>
 
